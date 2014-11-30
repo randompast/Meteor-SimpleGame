@@ -20,3 +20,4 @@ This is an adaptation from leaderboard application (meteor create --example lead
   * Use Miniredis.RedisStore for player positions.
   * Use Mongo.Collection for longer term information
 2. handle logout
+3. Add [keypress](https://atmospherejs.com/keypress/keypress) [info](http://dmauro.github.io/Keypress/)
