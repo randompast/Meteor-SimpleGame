@@ -8,7 +8,7 @@ Players = new Mongo.Collection("players");
 if (Meteor.isClient) {
 
   // Get updates when they occur
-  Meteor.subscribe('playerPositions');
+  Meteor.subscribe('playerPositions')
 
   // Get arrow key presses
   // Not passing a value allows server to be authoritative
@@ -50,9 +50,9 @@ if (Meteor.isClient) {
       gc().clearRect(0,0,400,400)
       gc().fillRect(i.xpos,i.ypos,10,10)
     })
-    requestAnimationFrame(render);
+    requestAnimationFrame(render)
   }
-  render();
+  render()
 }
 
 // On server startup, create some players if the database is empty.
