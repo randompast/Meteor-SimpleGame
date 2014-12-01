@@ -19,5 +19,6 @@ This is an adaptation from leaderboard application (meteor create --example lead
   * https://atmospherejs.com/slava/miniredis
   * Use Miniredis.RedisStore for player positions.
   * Use Mongo.Collection for longer term information
+  * Maybe use [meteorhacks:npm](https://atmospherejs.com/meteorhacks/npm) for redis?
 2. handle logout
 3. Add [keypress](https://atmospherejs.com/keypress/keypress) [info](http://dmauro.github.io/Keypress/)
