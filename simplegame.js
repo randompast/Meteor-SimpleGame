@@ -1,11 +1,11 @@
 // This application is a modification of:
 // meteor create --example leaderboard
 
-// Set up a collection to contain player information. On the server,
-// it is backed by a MongoDB collection named "players".
-Players = new Mongo.Collection("players");
-
 if (Meteor.isClient) {
+  // Set up a collection to contain player information. On the server,
+  // it is declared again (with { connection : null }) to avoid
+  // unecessary writes to the database.
+  Players = new Mongo.Collection("players");
 
   // Get updates when they occur
   Meteor.subscribe('playerPositions')
@@ -57,6 +57,10 @@ if (Meteor.isClient) {
 
 // On server startup, create some players if the database is empty.
 if (Meteor.isServer) {
+  // Set up a collection to contain player information. It is
+  // declared with { connection : null } to avoid unecessary writes
+  // to the database.
+  Players = new Mongo.Collection("players", {connection: null});
   // Allow clients to subscribe to Players
   Meteor.publish('playerPositions', function() {
     return Players.find()
